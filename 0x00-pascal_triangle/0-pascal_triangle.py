@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Define a method that generates Pascal's Triangle."""
+from math import factorial
 
 
 def pascal_triangle(n):
@@ -10,10 +11,11 @@ def pascal_triangle(n):
     the Pascal's triangle of n in time O(n).
     """
     pascal_triangle = []
-
     for i in range(n):
-        row_value = str(11 ** i)
-        row_digits = [int(digit) for digit in row_value]
-        pascal_triangle.append(row_digits)
+        row = []
+        for j in range(i + 1):
+            # iCj = i!/((i-j)!*j!)
+            row.append(factorial(i)//(factorial(j)*factorial(i-j)))
+        pascal_triangle.append(row)
 
     return pascal_triangle
