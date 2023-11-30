@@ -1,8 +1,11 @@
+#!/usr/bin/python3
 """Define a method that generates Pascal's Triangle."""
 
 
 def pascal_triangle(n):
     """
+    Return a pascal triangle of n.
+
     Return a list of lists of integers representing
     the Pascal's triangle of n in time O(n).
     """
