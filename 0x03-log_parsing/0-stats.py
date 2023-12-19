@@ -12,15 +12,14 @@ stats = {
     '405': 0,
     '500': 0
 }
-
-total_size = 0
+sizes = [0]
 
 
 def print_stats():
-    print(f'File size: {total_size}')
-    for status_code, count in sorted(stats.items()):
+    print('File size: {}'.format(sum(sizes)))
+    for s_code, count in sorted(stats.items()):
         if count:
-            print(f'{status_code}: {count}')
+            print('{}: {}'.format(s_code, count))
 
 
 try:
@@ -31,12 +30,12 @@ try:
             file_size = matches[-1]
             if status_code in stats.keys():
                 stats[status_code] += 1
-            total_size += int(file_size)
+            sizes.append(int(file_size))
         except Exception:
-            # ignore lines that don't match the format
             pass
         if i % 10 == 0:
             print_stats()
+    print_stats()
 except KeyboardInterrupt:
     print_stats()
     raise
