@@ -1,8 +1,8 @@
 #!/usr/bin/node
-const request = require("request");
+const request = require('request');
 const movieId = process.argv[2];
 request(
-  "https://swapi-api.alx-tools.com/api/films/" + movieId + "/",
+  'https://swapi-api.alx-tools.com/api/films/' + movieId + '/',
   async function (error, response, body) {
     if (error) return console.error(error);
     const characters = JSON.parse(body).characters;
