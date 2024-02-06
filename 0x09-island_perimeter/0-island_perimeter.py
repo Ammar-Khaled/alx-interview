@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """Define islandPerimeter function."""
-from typing import List
 
 
-def island_perimeter(grid: List[List[int]]) -> int:
+def island_perimeter(grid: list) -> int:
     """Retrun the perimeter of the island represented by `grid`."""
     perimeter = 0
     height = len(grid)
