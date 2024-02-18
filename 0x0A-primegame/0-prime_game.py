@@ -19,6 +19,7 @@ def is_prime(x: int) -> bool:
 # precalculate the number of primes between 1 and n inclusive
 # for each n from 1 to 10000 (which is the maximum defined in the problem)
 numOfPrimesByN = {}
+numOfPrimesByN[0] = 0
 count = 0
 for i in range(1, 10001):
     if is_prime(i):
